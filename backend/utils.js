@@ -1,3 +1,3 @@
-const getImportantProperties = (pets) => pets.map(({name, description, status, size, gender, age, url}) =>  ({name, description, status, size, gender, age, url}));
+const getImportantProperties = (pets) => pets.map(({id, name, description, status, size, gender, age, url}) =>  ({id, name, description, status, size, gender, age, url}));
 
 module.exports = {getImportantProperties};
