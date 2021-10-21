@@ -1,0 +1,16 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-image: url('https://www.science.org/do/10.1126/science.aba2340/abs/dogs_1280p_0.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+}

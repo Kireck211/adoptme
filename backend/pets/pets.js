@@ -6,6 +6,7 @@ const petsWithImportantProperties = getImportantProperties(pets);
 
 router.get('/', (req, res) => {
   // send all the petsWithImportantProperties
+  res.send(petsWithImportantProperties);
 });
 
 router.post('/', (req, res) => {
