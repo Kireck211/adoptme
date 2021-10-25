@@ -11,6 +11,7 @@ const { PORT } = process.env;
 
 app.use(morgan('common'));
 app.use(cors());
+app.use(express.json());
 
 app.use('/pets', pets);
 app.use(express.static(path.join(__dirname, '../frontend')));
