@@ -1,5 +1,5 @@
 async function getDog(id) {
-  const response = await fetch('http://localhost:3000/pets/' + id);
+  const response = await fetch(BASE_URL + 'pets/' + id);
   if (!!response === false) {
     console.log('No dogs found');
     return;
@@ -22,14 +22,14 @@ function addListeners(id) {
     $inputs.each(function() {
       values[this.name] = $(this).val();
     });
-    const response = await fetch('http://localhost:3000/pets/' + id, {
+    const response = await fetch(BASE_URL + 'pets/' + id, {
       headers: {
         'Content-Type': 'application/json'
       },
       method: 'PUT',
       body: JSON.stringify(values)
     });
-    if (response.ok) window.location = 'http://localhost:3000/showPet/pet.html?id=' + id;
+    if (response.ok) window.location = BASE_URL + 'showPet/pet.html?id=' + id;
   });
 }
 

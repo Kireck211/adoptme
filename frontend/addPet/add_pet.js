@@ -11,7 +11,7 @@ function addListeners() {
     $inputs.each(function() {
       values[this.name] = $(this).val();
     });
-    const response = await fetch('http://localhost:3000/pets', {
+    const response = await fetch(BASE_URL + 'pets', {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -21,7 +21,7 @@ function addListeners() {
     if (response.ok) {
       const data = await response.json();
       const {id} = data;
-      window.location = 'http://localhost:3000/showPet/pet.html?id=' + id;
+      window.location = BASE_URL + '/showPet/pet.html?id=' + id;
     }
 
   });

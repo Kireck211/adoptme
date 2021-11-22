@@ -1,5 +1,5 @@
 async function getDogs() {
-  let response = await fetch('http://localhost:3000/pets');
+  let response = await fetch(BASE_URL + 'pets');
   let dogs = await response.json();
   return dogs;
 }
@@ -42,10 +42,10 @@ function addListener() {
   $('tbody').on('click', function(event) {
     const $tr = $(event.target).closest('tr');
     const id = $tr.data('id');
-    window.location.href = 'http://localhost:3000/showPet/pet.html?id=' + id;
+    window.location.href = BASE_URL + 'showPet/pet.html?id=' + id;
   });
   $('.add').on('click', function() {
-    window.location.href = 'http://localhost:3000/addPet/add_pet.html';
+    window.location.href = BASE_URL + 'addPet/add_pet.html';
   });
 }
 

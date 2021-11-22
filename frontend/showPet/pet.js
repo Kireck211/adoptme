@@ -1,6 +1,6 @@
 async function getDog(id) {
   console.log(id);
-  const response = await fetch('http://localhost:3000/pets/' + id);
+  const response = await fetch(BASE_URL + 'pets/' + id);
   if (!!response === false) {
     console.log('No dogs found');
     return;
@@ -24,13 +24,13 @@ function setDog(dog) {
 function setListeners(id) {
   $('.edit').on('click', function() {
     const parameters = `?${encodeTextForURL('id', id)}&${encodeTextForURL('back', window.location)}`;
-    window.location.href = 'http://localhost:3000/editPet/edit_pet.html' + parameters;
+    window.location.href = BASE_URL + 'editPet/edit_pet.html' + parameters;
   });
   $('.delete').on('click', async function() {
-    const response = await fetch('http://localhost:3000/pets/' + id, {
+    const response = await fetch(BASE_URL + 'pets/' + id, {
       method: 'DELETE'
     });
-    if (response.ok) window.location.replace('http://localhost:3000/adopt/adopt.html');
+    if (response.ok) window.location.replace(BASE_URL + 'adopt/adopt.html');
   });
 }
 
